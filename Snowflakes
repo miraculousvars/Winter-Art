@@ -1,5 +1,9 @@
+var posX = 0;
+var posY = 0;
+
 function setup() {
   createCanvas(400, 400);
+    
 }
 
 function draw() {
@@ -8,9 +12,19 @@ function draw() {
   motionX = width/2;
   motionY = 0;
   
-  translate((width/2),(width/2));
+  translate(posX, posY);
   
   snowflake();
+  
+  posY++;
+  posX += 0.25;
+  
+  if(posY > width+30) {
+    posY = 0;
+  }
+  if(posX > width+30) {
+    posX = 0;
+  }
 }
 
 function snowflake() {
