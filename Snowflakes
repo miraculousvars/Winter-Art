@@ -1,0 +1,22 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(70, 130, 180);
+  
+  motionX = width/2;
+  motionY = 0;
+  
+  translate((width/2),(width/2));
+  
+  snowflake();
+}
+
+function snowflake() {
+  stroke(255,255,255);
+  line(-25,-25,25,25);
+  line(-25,25,25,-25);
+  line(-25,0,25,0);
+  line(0,-25,0,25);
+}
