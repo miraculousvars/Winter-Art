@@ -1,0 +1,44 @@
+function setup() {
+  createCanvas(400, 400);
+}
+
+function draw() {
+  background(135, 206, 235);
+
+  fill(255,255,255);
+  snowmanBody(width/2, (height/2)+50);
+  snowmanTorso(width/2, height/2);
+  snowmanHead(width/2, (height/2)-40);
+}
+
+function snowmanBody(a, b) {
+  circle(a, b, 100);
+}
+
+function snowmanTorso(c, d) {
+  circle(c, d, 75);
+}
+
+function snowmanHead(e, f) {
+  circle(e, f, 50);
+  
+  // carrot nose
+  fill(255,140,0);
+  triangle(e, f, e, f+10, e-20, f+5);
+  
+  // dot eyes
+  fill(0);
+  circle(e-10,f-5,5);
+  circle(e+10,f-5,5);
+  
+  // mouth
+  beginShape(POINTS);
+  vertex(e-10,f+12);
+  vertex(e-7, f+15);
+  vertex(e-4, f+17);
+  vertex(e, f+17);
+  vertex(e+4, f+17);
+  vertex(e+7, f+15);
+  vertex(e+10,f+12);
+  endShape();
+}
