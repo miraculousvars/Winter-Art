@@ -9,6 +9,9 @@ function draw() {
   snowmanBody(width/2, (height/2)+50);
   snowmanTorso(width/2, height/2);
   snowmanHead(width/2, (height/2)-40);
+  
+  fill(139, 69, 19);
+  snowmanArms(width/2,height/2);
 }
 
 function snowmanBody(a, b) {
@@ -21,16 +24,16 @@ function snowmanTorso(c, d) {
 
 function snowmanHead(e, f) {
   circle(e, f, 50);
-  
+
   // carrot nose
   fill(255,140,0);
   triangle(e, f, e, f+10, e-20, f+5);
-  
+
   // dot eyes
   fill(0);
   circle(e-10,f-5,5);
   circle(e+10,f-5,5);
-  
+
   // mouth
   beginShape(POINTS);
   vertex(e-10,f+12);
@@ -41,4 +44,13 @@ function snowmanHead(e, f) {
   vertex(e+7, f+15);
   vertex(e+10,f+12);
   endShape();
+  
+}
+
+function snowmanArms(g, h) {
+  // left arm
+  line(g+30,h,(g+80),(h-30));
+  
+  // right arm
+  line((g-30),h,(g-80),h-30);
 }
