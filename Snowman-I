@@ -1,7 +1,7 @@
 function setup() {
   createCanvas(500, 500);
   rectMode(CENTER);
-
+  frameRate(10);
 }
 
 function draw() {
@@ -10,8 +10,11 @@ function draw() {
   // turns the snow white
   fill(255,255,255);
   
-  // thin stroke around snow
+  snowflakes();
+  
+  // thin black stroke around snowman
   strokeWeight(1);
+  stroke(0);
   
   // bottom circle
   circle(250,350,200);
@@ -72,4 +75,11 @@ function draw() {
   textSize(30);
   text("Hello, Snow!", 250, 485);
 
+}
+
+function snowflakes() {
+  for (var i = 0; i < 500; i = i+5) {
+    stroke(255);
+    point(random(0,500), random(0,500));
+  }
 }
