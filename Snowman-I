@@ -1,0 +1,75 @@
+function setup() {
+  createCanvas(500, 500);
+  rectMode(CENTER);
+
+}
+
+function draw() {
+  background(120,150,200);
+  
+  // turns the snow white
+  fill(255,255,255);
+  
+  // thin stroke around snow
+  strokeWeight(1);
+  
+  // bottom circle
+  circle(250,350,200);
+  
+  // middle circle
+  circle(250,250,150);
+  
+  // scarf
+  fill(191,26,15);
+  rect(225,270,50,150);
+  rect(250,210,100,50,10);
+  
+  // head circle
+  fill(255);
+  circle(250,175,100);
+  
+  // carrot nose
+  fill(250,135,49);
+  triangle(250,175,250,200,200,185);
+  
+  // eyes
+  fill(0);
+  circle(230,160,10);
+  circle(265,160,10);
+  
+  // mouth
+  circle(225,205,5);
+  circle(235,210,5);
+  circle(245,212,5);
+  circle(255,210,5);
+  circle(265,205,5);
+  
+  // hat
+  rect(250,100,50,60);
+  ellipse(250,130,100,20);
+  
+  // arms
+  strokeWeight(3);
+  
+  // still arm
+  line(310,250,400,200);
+  
+  // waving arm
+  if(mouseX > 100 && mouseX < 175) {
+    line(mouseX,(200-(mouseX-100)),190,250);
+  }
+  else if(mouseX >= 175) {
+    line(175,126,190,250);
+  }
+  else if (mouseX < 100) {
+    line(100,200,190,250);
+  }
+  
+  // text at the bottom
+  fill(255);
+  textAlign(CENTER);
+  textStyle(ITALIC);
+  textSize(30);
+  text("Hello, Snow!", 250, 485);
+
+}
